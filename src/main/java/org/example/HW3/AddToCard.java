@@ -34,6 +34,7 @@ public class AddToCard {
         button_add_to_cart.click();
 
 
+
         //driver.quit();
     }
 

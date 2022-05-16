@@ -16,24 +16,23 @@ public class HW4Test {
 
     @ParameterizedTest
     @CsvSource({"-3, 4, 5"})
-    public void negativeValueTest(int a, int b, int c) throws MyException {
+    public void negativeValueTest(int a, int b, int c) {
         Triangle triangle = new Triangle();
-        Assertions.assertEquals(6, triangle.aria(a,b,c));
+        Assertions.assertThrows(MyException.class, () -> triangle.aria(a,b,c));
     }
 
     @ParameterizedTest
     @CsvSource({"0, 4, 5"})
-    public void valueIsNullTest(int a, int b, int c) throws MyException {
+    public void valueIsNullTest(int a, int b, int c) {
         Triangle triangle = new Triangle();
-        Assertions.assertEquals(6, triangle.aria(a,b,c));
+        Assertions.assertThrows(MyException.class, () -> triangle.aria(a,b,c));
     }
 
     @ParameterizedTest
     @CsvSource({"10, 4, 5"})
-    public void triangleOrNoTest(int a, int b, int c) throws ExceptionNotTriangle {
+    public void triangleOrNoTest(int a, int b, int c) {
         Triangle triangle = new Triangle();
-        Assertions.assertTrue(triangle.triangleOrNo(a,b,c));
+        Assertions.assertThrows(ExceptionNotTriangle.class, () -> triangle.triangleOrNo(a,b,c));
     }
-
 
 }
