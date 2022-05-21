@@ -3,6 +3,7 @@ package HW5;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,7 +27,15 @@ public class AddToCard extends MyAbstractTest {
         WebElement button_add_to_cart = getDriver().findElement(By.xpath("//p[@id = 'add_to_cart']/button"));
         button_add_to_cart.click();
 
-    WebElement button_continue = getDriver().findElement(By.cssSelector(".cross"));
+    try {
+        Thread.sleep(2000);
+    } catch (InterruptedException e){
+        e.printStackTrace();
+    }
+
+        getDriver().switchTo().alert();
+
+        WebElement button_continue = getDriver().findElement(By.cssSelector(".cross"));
 
     // WebElement button_continue = getDriver().findElement(By.xpath("//*[@title='Continue shopping']"));
     // button_continue.click();

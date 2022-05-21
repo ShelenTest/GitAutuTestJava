@@ -46,5 +46,4 @@ public class SortByPrice extends MyAbstractTest{
        String result_extradition = extradition.getText();
        Assertions.assertEquals("Showing 1 - 7 of 7 items", result_extradition, "unsuccessful");
 
-
 }}
